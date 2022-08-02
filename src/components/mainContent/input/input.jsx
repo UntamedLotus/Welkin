@@ -1,5 +1,6 @@
 import "./input.style.scss";
 import React from "react";
+import Icon from "./icon/icon";
 
 const Input = (props) => {
   return (
@@ -13,10 +14,14 @@ const Input = (props) => {
           placeholder="Enter name of Celestial body"
           required
         />
-        <input type="submit" className="submit-icon" />
+        <button>
+          <Icon />
+        </button>
       </form>
     </div>
   );
 };
 
 export default Input;
+
+// IoCheckmarkSharp

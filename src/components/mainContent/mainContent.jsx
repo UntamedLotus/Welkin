@@ -2,6 +2,7 @@
 
 import React from "react";
 import Input from "./input/input";
+import Screen from "./screen/screen";
 
 const MainContent = () => {
   const [elem, setElem] = React.useState({
@@ -26,15 +27,14 @@ const MainContent = () => {
       .then((res) => res.json())
       .then((data) => {
         setElem(data);
+        console.log(data);
       });
   }, [elem]);
 
   return (
     <div>
       <Input body={body} onSubmit={onSubmit} handleValue={handleValue} />
-      <h1>HelloWorld</h1>
-      <h2>{elem.englishName}</h2>
-      <p>{elem.bodyType}</p>
+      <Screen elem={elem} />
     </div>
   );
 };
