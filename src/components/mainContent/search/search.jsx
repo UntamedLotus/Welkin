@@ -1,4 +1,5 @@
 import React from "react";
+import "./search.scss";
 import { IoCheckmarkSharp } from "react-icons/io5";
 
 const Search = (props) => {

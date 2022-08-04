@@ -1,4 +1,5 @@
 import React from "react";
+import "./result.scss";
 
 const Result = (props) => {
   const NAME = props.elems.result.englishName;
@@ -25,8 +26,10 @@ const Result = (props) => {
   const VOLUME_VALUE = props.elems.vol.volValue;
 
   const moonsArray = props.elems.moons;
-
-  const MOONS = moonsArray.map((body) => <p key={body.moon}>{body.moon}</p>);
+  const MOONS =
+    moonsArray !== null
+      ? moonsArray.map((body) => <p key={body.moon}>{body.moon}</p>)
+      : 0;
 
   const pageIntro = function () {
     return (
