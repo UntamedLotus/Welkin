@@ -1,9 +1,13 @@
 import React from "react";
-import { IoCheckmarkSharp } from "react-icons/io5";
+import Search from "./search/search";
+import Result from "./result/result";
 
 const MainContent = () => {
   const [elems, setElems] = React.useState({
     result: {},
+    mass: {},
+    vol: {},
+    moons: [],
     query: "",
     status: false,
   });
@@ -33,54 +37,17 @@ const MainContent = () => {
         .then((data) => {
           setElems({
             result: data,
+            mass: data.mass,
+            vol: data.vol,
+            moons: data.moons,
           });
-          console.log(data);
         });
   }, [elems.status]);
 
-  const pageIntro = function () {
-    return (
-      <div className="page-intro">
-        <h1 className="pageintro-title">Welkin</h1>
-        <p className="pageintro-text">
-          Enter the name of the Celestial body of solar sstem and get basic
-          information about it!
-        </p>
-        <p className="text">
-          This app is made by using <span className="underlined">React</span>.
-        </p>
-      </div>
-    );
-  };
-
-  const Information = function () {
-    return (
-      <div className="">
-        <h2>Basic Properties:</h2>
-        <li>
-          <ul>Name:{elems.result.name}</ul>
-          <ul>Body Type:{elems.result.bodyType}</ul>
-        </li>
-      </div>
-    );
-  };
-
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          onChange={handleValue}
-          name="body"
-          value={body}
-          placeholder="Enter name of Celestial body"
-          required
-        />
-        <button>
-          <IoCheckmarkSharp color={"#000"} />
-        </button>
-      </form>
-      {elems.status === false ? pageIntro() : Information()}
+      <Search onSubmit={onSubmit} handleValue={handleValue} body={body} />
+      <Result elems={elems} />
     </div>
   );
 };
