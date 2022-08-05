@@ -1,0 +1,41 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.5rem;
+}
+
+input {
+  height: 2.2rem;
+  width: 30%;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  outline: none;
+  border: none;
+
+  background: transparent;
+  border-bottom: 1px solid #95d8d0;
+}
+
+input::placeholder {
+  color: #95d8d0;
+}
+
+input:focus {
+  background-color: transparent;
+  border-bottom: 1px solid #95d8d0;
+}
+
+button {
+  background-image: linear-gradient(45deg, #dcfffb, #e6d1f2);
+
+  border: none;
+  border-radius: 50%;
+  height: 2.2rem;
+  width: 2.2rem;
+
+  .icon {
+    text-align: center;
+  }
+}

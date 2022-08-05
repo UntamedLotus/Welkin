@@ -14,7 +14,7 @@ const Search = (props) => {
         required
       />
       <button>
-        <IoCheckmarkSharp color={"#000"} />
+        <IoCheckmarkSharp className="icon" color={"#21504a"} size={"1.5rem"} />
       </button>
     </form>
   );

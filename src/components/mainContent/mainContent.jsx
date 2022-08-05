@@ -36,7 +36,17 @@ const MainContent = () => {
   React.useEffect(() => {
     elems.status &&
       fetch(`https://api.le-systeme-solaire.net/rest/bodies/${elems.query}`)
-        .then((res) => res.json())
+        .then((res) => {
+          if (res.status >= 404) {
+            alert("Celestial body not found");
+            setElems({
+              ...elems,
+              status: false,
+            });
+            throw new Error("Server responds with error!");
+          }
+          return res.json();
+        })
         .then((data) => {
           setElems({
             result: data,

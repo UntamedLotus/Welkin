@@ -34,8 +34,8 @@ const Result = (props) => {
   const pageIntro = function () {
     return (
       <div className="page-intro">
-        <h1 className="pageintro-title">Welkin</h1>
-        <p className="pageintro-text">
+        <h1 className="page-intro-title neon">Welkin</h1>
+        <p className="page-intro-text">
           Enter the name of the Celestial body of solar system and get basic
           information about it!
         </p>
