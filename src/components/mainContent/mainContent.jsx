@@ -1,6 +1,9 @@
 import React from "react";
+
 import Search from "./search/search";
 import Result from "./result/result";
+
+import "./mainContent.scss";
 
 const MainContent = () => {
   const [elems, setElems] = React.useState({
@@ -45,7 +48,7 @@ const MainContent = () => {
   }, [elems.status]);
 
   return (
-    <div>
+    <div className="mainContent">
       <Search onSubmit={onSubmit} handleValue={handleValue} body={body} />
       <Result elems={elems} />
     </div>
