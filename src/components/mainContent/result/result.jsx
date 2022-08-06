@@ -58,37 +58,37 @@ const Result = (props) => {
   const Information = function () {
     return (
       <div className="information card">
+        <h1 className="name neon">{NAME}</h1>
         <div className="basic">
           <h2>Basic Properties:</h2>
           <li className="list">
-            <ul>Name: {NAME}</ul>
-            <ul>Body Type: {BODY_TYPE}</ul>
-            <ul>Axial Tilt: {AXIAL_TILT}</ul>
-            <ul>Density: {DENSITY}</ul>
-            <ul>Dimension: {DIMENSION}</ul>
-            <ul>Discovered By: {DISCOVERED_BY}</ul>
-            <ul>Discovery Date: {DISCOVERY_DATE}</ul>
-            <ul>Equa Radius: {EQUA_RADIUS}</ul>
-            <ul>Flattening: {FLATTENING}</ul>
-            <ul>Gravity: {GRAVITY}</ul>
-            <ul>Inclination: {INCLINATION}</ul>
-            <ul>Moons: {MOONS}</ul>
+            <ul>Body Type - {BODY_TYPE}</ul>
+            <ul>Axial Tilt - {AXIAL_TILT}</ul>
+            <ul>Density - {DENSITY}</ul>
+            <ul>Dimension - {DIMENSION}</ul>
+            <ul>Discovered By - {DISCOVERED_BY}</ul>
+            <ul>Discovery Date - {DISCOVERY_DATE}</ul>
+            <ul>Equa Radius - {EQUA_RADIUS}</ul>
+            <ul>Flattening - {FLATTENING}</ul>
+            <ul>Gravity - {GRAVITY}</ul>
+            <ul>Inclination - {INCLINATION}</ul>
+            <ul>Moons - {MOONS}</ul>
           </li>
         </div>
 
         <div className="other">
-          <h2>Other properties:</h2>
+          <h2>Other properties -</h2>
           <li className="list">
-            <ul>Mass Exponent: {MASS_EXPONENT}</ul>
-            <ul>Mass Value: {MASS_VALUE}</ul>
-            <ul>Perihelion: {PERIHELIAN}</ul>
-            <ul>Polar Radius: {POLAR_RADIUS}</ul>
-            <ul>Mean Radius: {MEAN_RADIUS}</ul>
-            <ul>Semi Major Axis: {SEMI_MAJOR_AXIS}</ul>
-            <ul>Sideral Orbit: {SIDERAL_ORBIT}</ul>
-            <ul>Sideral Rotation: {SIDERAL_ROTATION}</ul>
-            <ul>Volume Exponent: {VOLUME_EXPONENT}</ul>
-            <ul>Volume Value: {VOLUME_VALUE}</ul>
+            <ul>Mass Exponent - {MASS_EXPONENT}</ul>
+            <ul>Mass Value - {MASS_VALUE}</ul>
+            <ul>Perihelion - {PERIHELIAN}</ul>
+            <ul>Polar Radius - {POLAR_RADIUS}</ul>
+            <ul>Mean Radius - {MEAN_RADIUS}</ul>
+            <ul>Semi Major Axis - {SEMI_MAJOR_AXIS}</ul>
+            <ul>Sideral Orbit - {SIDERAL_ORBIT}</ul>
+            <ul>Sideral Rotation - {SIDERAL_ROTATION}</ul>
+            <ul>Volume Exponent - {VOLUME_EXPONENT}</ul>
+            <ul>Volume Value - {VOLUME_VALUE}</ul>
           </li>
         </div>
       </div>
