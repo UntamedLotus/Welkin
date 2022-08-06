@@ -6,9 +6,18 @@ const Result = (props) => {
   const BODY_TYPE = props.elems.result.bodyType;
   const AXIAL_TILT = props.elems.result.axialTilt;
   const DENSITY = props.elems.result.density;
-  const DIMENSION = props.elems.result.dimension;
-  const DISCOVERED_BY = props.elems.result.discoveredBy;
-  const DISCOVERY_DATE = props.elems.result.discoveryDate;
+  const DIMENSION =
+    props.elems.result.dimension === ""
+      ? "not defined"
+      : props.elems.result.dimension;
+  const DISCOVERED_BY =
+    props.elems.result.discoveredBy === ""
+      ? "not defined"
+      : props.elems.result.discoveredBy;
+  const DISCOVERY_DATE =
+    props.elems.result.discoveryDate === ""
+      ? "not defined"
+      : props.elems.result.discoveryDate;
   const EQUA_RADIUS = props.elems.result.equaRadius;
   const FLATTENING = props.elems.result.flattening;
   const GRAVITY = props.elems.result.gravity;
@@ -48,36 +57,40 @@ const Result = (props) => {
 
   const Information = function () {
     return (
-      <div className="Information">
-        <h2>Basic Properties:</h2>
-        <li>
-          <ul>Name: {NAME}</ul>
-          <ul>Body Type: {BODY_TYPE}</ul>
-          <ul>Axial Tilt: {AXIAL_TILT}</ul>
-          <ul>Density: {DENSITY}</ul>
-          <ul>Dimension: {DIMENSION}</ul>
-          <ul>Discovered By: {DISCOVERED_BY}</ul>
-          <ul>Discovery Date: {DISCOVERY_DATE}</ul>
-          <ul>Equa Radius: {EQUA_RADIUS}</ul>
-          <ul>Flattening: {FLATTENING}</ul>
-          <ul>Gravity: {GRAVITY}</ul>
-          <ul>Inclination: {INCLINATION}</ul>
-          <ul>Moons: {MOONS}</ul>
-        </li>
+      <div className="information card">
+        <div className="basic">
+          <h2>Basic Properties:</h2>
+          <li className="list">
+            <ul>Name: {NAME}</ul>
+            <ul>Body Type: {BODY_TYPE}</ul>
+            <ul>Axial Tilt: {AXIAL_TILT}</ul>
+            <ul>Density: {DENSITY}</ul>
+            <ul>Dimension: {DIMENSION}</ul>
+            <ul>Discovered By: {DISCOVERED_BY}</ul>
+            <ul>Discovery Date: {DISCOVERY_DATE}</ul>
+            <ul>Equa Radius: {EQUA_RADIUS}</ul>
+            <ul>Flattening: {FLATTENING}</ul>
+            <ul>Gravity: {GRAVITY}</ul>
+            <ul>Inclination: {INCLINATION}</ul>
+            <ul>Moons: {MOONS}</ul>
+          </li>
+        </div>
 
-        <h2>Other properties:</h2>
-        <li>
-          <ul>Mass Exponent: {MASS_EXPONENT}</ul>
-          <ul>Mass Value: {MASS_VALUE}</ul>
-          <ul>Perihelion: {PERIHELIAN}</ul>
-          <ul>Polar Radius: {POLAR_RADIUS}</ul>
-          <ul>Mean Radius: {MEAN_RADIUS}</ul>
-          <ul>Semi Major Axis: {SEMI_MAJOR_AXIS}</ul>
-          <ul>Sideral Orbit: {SIDERAL_ORBIT}</ul>
-          <ul>Sideral Rotation: {SIDERAL_ROTATION}</ul>
-          <ul>Volume Exponent: {VOLUME_EXPONENT}</ul>
-          <ul>Volume Value: {VOLUME_VALUE}</ul>
-        </li>
+        <div className="other">
+          <h2>Other properties:</h2>
+          <li className="list">
+            <ul>Mass Exponent: {MASS_EXPONENT}</ul>
+            <ul>Mass Value: {MASS_VALUE}</ul>
+            <ul>Perihelion: {PERIHELIAN}</ul>
+            <ul>Polar Radius: {POLAR_RADIUS}</ul>
+            <ul>Mean Radius: {MEAN_RADIUS}</ul>
+            <ul>Semi Major Axis: {SEMI_MAJOR_AXIS}</ul>
+            <ul>Sideral Orbit: {SIDERAL_ORBIT}</ul>
+            <ul>Sideral Rotation: {SIDERAL_ROTATION}</ul>
+            <ul>Volume Exponent: {VOLUME_EXPONENT}</ul>
+            <ul>Volume Value: {VOLUME_VALUE}</ul>
+          </li>
+        </div>
       </div>
     );
   };

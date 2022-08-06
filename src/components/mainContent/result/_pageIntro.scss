@@ -1,0 +1,40 @@
+.page-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 10px;
+
+  h1 {
+    color: #4b6c68;
+    font-size: 4rem;
+    font-family: "Montserrat Subrayada";
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 500px;
+    text-transform: uppercase;
+  }
+}
+
+.neon {
+  text-shadow: 0 0 25px #d5efec, 0 0 10px #d5efec, 0 0 20px #d5efec,
+    0 0 20px #a0dcd5, 0 0 90px #a0dcd5, 0 0 100px #a0dcd5, 0 0 100px #a0dcd5,
+    0 0 150px #a0dcd5;
+}
+
+.page-intro-text {
+  margin-top: 3rem;
+  color: #0f1615;
+}
+
+.text {
+  margin-top: 18rem;
+  color: #a0dcd5;
+}
+
+.underlined {
+  text-decoration: underline;
+}

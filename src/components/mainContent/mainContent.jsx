@@ -54,6 +54,7 @@ const MainContent = () => {
             vol: data.vol,
             moons: data.moons,
           });
+          console.log(data);
         });
   }, [elems.status]);
 
