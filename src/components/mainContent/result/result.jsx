@@ -1,5 +1,6 @@
 import React from "react";
 import "./result.scss";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 const Result = (props) => {
   const NAME = props.elems.result.englishName;
@@ -37,8 +38,11 @@ const Result = (props) => {
   const moonsArray = props.elems.moons;
   const MOONS =
     moonsArray !== null
-      ? moonsArray.map((body) => <p key={body.moon}>{body.moon}</p>)
-      : 0;
+      ? moonsArray.map((body) => (
+          <span key={body.moon}> &#8226; {body.moon} </span>
+        ))
+      : "NONE";
+  console.log(typeof MOONS);
 
   const pageIntro = function () {
     return (
@@ -72,12 +76,11 @@ const Result = (props) => {
             <ul>Flattening - {FLATTENING}</ul>
             <ul>Gravity - {GRAVITY}</ul>
             <ul>Inclination - {INCLINATION}</ul>
-            <ul>Moons - {MOONS}</ul>
           </li>
         </div>
 
         <div className="other">
-          <h2>Other properties -</h2>
+          <h2>Other properties :</h2>
           <li className="list">
             <ul>Mass Exponent - {MASS_EXPONENT}</ul>
             <ul>Mass Value - {MASS_VALUE}</ul>
@@ -91,6 +94,15 @@ const Result = (props) => {
             <ul>Volume Value - {VOLUME_VALUE}</ul>
           </li>
         </div>
+
+        <div className="moons">
+          <h2 className="moon-title">Moons :</h2>
+          <span className="moon">{MOONS}</span>
+        </div>
+
+        <p className="close-icon" onClick={props.closeScreen}>
+          <IoCloseCircleOutline />
+        </p>
       </div>
     );
   };

@@ -33,6 +33,13 @@ const MainContent = () => {
     setBody("");
   };
 
+  const closeScreen = function () {
+    setElems({
+      ...elems,
+      status: false,
+    });
+  };
+
   React.useEffect(() => {
     elems.status &&
       fetch(`https://api.le-systeme-solaire.net/rest/bodies/${elems.query}`)
@@ -61,7 +68,7 @@ const MainContent = () => {
   return (
     <div className="mainContent">
       <Search onSubmit={onSubmit} handleValue={handleValue} body={body} />
-      <Result elems={elems} />
+      <Result elems={elems} closeScreen={closeScreen} />
     </div>
   );
 };
