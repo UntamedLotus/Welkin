@@ -32,3 +32,16 @@
 .underlined {
   text-decoration: underline;
 }
+
+/************ MEDIA QURIES *************/
+@media (max-width: 44em) {
+  .page-intro-text {
+    color: #0c1d1a;
+  }
+}
+
+@media (max-width: 34em) {
+  .page-intro-text {
+    color: #a0dcd5;
+  }
+}
