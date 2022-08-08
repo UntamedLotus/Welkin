@@ -6,6 +6,7 @@ import Result from "./result/result";
 import "./mainContent.scss";
 
 const MainContent = () => {
+  // Setting state to initialize values
   const [elems, setElems] = React.useState({
     result: {},
     mass: {},
@@ -15,14 +16,17 @@ const MainContent = () => {
     status: false,
   });
 
+  // State to store temporary input values
   const [body, setBody] = React.useState("");
 
+  // Targeting the input value
   const handleValue = function (e) {
     const val = e.target.value;
     console.log(val);
     setBody(val);
   };
 
+  // Setting values and rendering results + Deciding state by boolean
   const onSubmit = function (e) {
     e.preventDefault();
     setElems({
@@ -40,6 +44,8 @@ const MainContent = () => {
     });
   };
 
+  // Fetching API & getting Data
+
   React.useEffect(() => {
     elems.status &&
       fetch(`https://api.le-systeme-solaire.net/rest/bodies/${elems.query}`)
@@ -50,7 +56,7 @@ const MainContent = () => {
               ...elems,
               status: false,
             });
-            throw new Error("Server responds with error!");
+            throw new Error("Server responds with error!"); // Error Handling
           }
           return res.json();
         })
@@ -61,7 +67,7 @@ const MainContent = () => {
             vol: data.vol,
             moons: data.moons,
           });
-          console.log(data);
+          //  Processing Data for Result
         });
   }, [elems.status]);
 

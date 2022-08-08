@@ -3,6 +3,7 @@ import "./result.scss";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 const Result = (props) => {
+  // Storing Data value
   const NAME = props.elems.result.englishName;
   const BODY_TYPE = props.elems.result.bodyType;
   const AXIAL_TILT = props.elems.result.axialTilt;

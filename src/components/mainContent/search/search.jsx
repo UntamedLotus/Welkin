@@ -2,6 +2,7 @@ import React from "react";
 import "./search.scss";
 import { IoCheckmarkSharp } from "react-icons/io5";
 
+// Handling SearchQuery
 const Search = (props) => {
   return (
     <form onSubmit={props.onSubmit}>
