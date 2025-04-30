@@ -1,82 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Search from "./search/search";
 import Result from "./result/result";
 
 import "./mainContent.scss";
+import { BASE_URL } from "../../constants";
+import { toast } from "react-toastify";
 
 const MainContent = () => {
-  // Setting state to initialize values
-  const [elems, setElems] = React.useState({
-    result: {},
-    mass: {},
-    vol: {},
-    moons: [],
-    query: "",
-    status: false,
-  });
+	// Setting state to initialize values
+	const [elems, setElems] = React.useState({
+		result: {},
+		status: false,
+	});
 
-  // State to store temporary input values
-  const [body, setBody] = React.useState("");
+	// State to store temporary input values
+	const [status, setStatus] = useState(false);
 
-  // Targeting the input value
-  const handleValue = function (e) {
-    const val = e.target.value;
-    console.log(val);
-    setBody(val);
-  };
+	const [result, setResult] = useState(null);
 
-  // Setting values and rendering results + Deciding state by boolean
-  const onSubmit = function (e) {
-    e.preventDefault();
-    setElems({
-      ...elems,
-      query: body,
-      status: true,
-    });
-    setBody("");
-  };
+	const [inputQuery, setInputQuery] = useState("");
 
-  const closeScreen = function () {
-    setElems({
-      ...elems,
-      status: false,
-    });
-  };
+	// Targeting the input value
+	const handleValue = function (e) {
+		const val = e.target.value;
+		setInputQuery(val);
+	};
 
-  // Fetching API & getting Data
+	// Setting values and rendering results + Deciding state by boolean
+	const onSubmit = function (e) {
+		e.preventDefault();
 
-  React.useEffect(() => {
-    elems.status &&
-      fetch(`https://api.le-systeme-solaire.net/rest/bodies/${elems.query}`)
-        .then((res) => {
-          if (res.status >= 404) {
-            alert("Celestial body not found");
-            setElems({
-              ...elems,
-              status: false,
-            });
-            throw new Error("Server responds with error!"); // Error Handling
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setElems({
-            result: data,
-            mass: data.mass,
-            vol: data.vol,
-            moons: data.moons,
-          });
-          //  Processing Data for Result
-        });
-  }, [elems.status]);
+		try {
+			fetch(`${BASE_URL}/rest/bodies/${inputQuery}`)
+				.then((res) => {
+					if (res.status >= 404) {
+						toast.error("Celestial body not found");
+						setElems({
+							...elems,
+							status: false,
+						});
+					}
+					return res.json();
+				})
+				.then((data) => {
+					setElems({
+						result: data,
+					});
+				});
+		} catch (error) {
+			toast.error(error?.message);
+		}
+	};
 
-  return (
-    <div className="mainContent">
-      <Search onSubmit={onSubmit} handleValue={handleValue} body={body} />
-      <Result elems={elems} closeScreen={closeScreen} />
-    </div>
-  );
+	const closeScreen = function () {
+		setElems({
+			...elems,
+			status: false,
+		});
+	};
+
+	return (
+		<div className='mainContent'>
+			<Search
+				onSubmit={onSubmit}
+				handleValue={handleValue}
+				inputQuery={inputQuery}
+			/>
+			<Result elems={elems} closeScreen={closeScreen} />
+		</div>
+	);
 };
 
 export default MainContent;

@@ -3,114 +3,185 @@ import "./result.scss";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 const Result = (props) => {
-  // Storing Data value
-  const NAME = props.elems.result.englishName;
-  const BODY_TYPE = props.elems.result.bodyType;
-  const AXIAL_TILT = props.elems.result.axialTilt;
-  const DENSITY = props.elems.result.density;
-  const DIMENSION =
-    props.elems.result.dimension === ""
-      ? "not defined"
-      : props.elems.result.dimension;
-  const DISCOVERED_BY =
-    props.elems.result.discoveredBy === ""
-      ? "not defined"
-      : props.elems.result.discoveredBy;
-  const DISCOVERY_DATE =
-    props.elems.result.discoveryDate === ""
-      ? "not defined"
-      : props.elems.result.discoveryDate;
-  const EQUA_RADIUS = props.elems.result.equaRadius;
-  const FLATTENING = props.elems.result.flattening;
-  const GRAVITY = props.elems.result.gravity;
-  const INCLINATION = props.elems.result.inclination;
+	const data = props?.elems?.result;
 
-  const MASS_EXPONENT = props.elems.mass.massExponent;
-  const MASS_VALUE = props.elems.mass.massValue;
-  const PERIHELIAN = props.elems.result.perihelion;
-  const POLAR_RADIUS = props.elems.result.polarRadius;
-  const MEAN_RADIUS = props.elems.result.meanRadius;
-  const SEMI_MAJOR_AXIS = props.elems.result.semimajorAxis;
-  const SIDERAL_ORBIT = props.elems.result.sideralOrbit;
-  const SIDERAL_ROTATION = props.elems.result.sideralRotation;
-  const VOLUME_EXPONENT = props.elems.vol.volExponent;
-  const VOLUME_VALUE = props.elems.vol.volValue;
+	const pageIntro = function () {
+		return (
+			<div className='page-intro'>
+				<section>
+					<h1 className='page-intro-title neon'>Welkin</h1>
+					<p className='page-intro-text'>
+						Enter the name of the Celestial body of solar system and
+						get basic information about it!
+					</p>
+				</section>
 
-  const moonsArray = props.elems.moons;
-  const MOONS =
-    moonsArray !== null
-      ? moonsArray.map((body) => (
-          <span key={body.moon}> &#8226; {body.moon} </span>
-        ))
-      : "NONE";
-  console.log(typeof MOONS);
+				<p className='text'>
+					This app is made by using{" "}
+					<a
+						href='https://react.dev/'
+						target='_blank'
+						rel='noreferrer'
+					>
+						React
+					</a>
+					.
+				</p>
+			</div>
+		);
+	};
 
-  const pageIntro = function () {
-    return (
-      <div className="page-intro">
-        <h1 className="page-intro-title neon">Welkin</h1>
-        <p className="page-intro-text">
-          Enter the name of the Celestial body of solar system and get basic
-          information about it!
-        </p>
-        <p className="text">
-          This app is made by using <span className="underlined">React</span>.
-        </p>
-      </div>
-    );
-  };
+	const Information = function () {
+		return (
+			<div className='information card'>
+				<h1 className='name neon'>{data?.englishName}</h1>
+				<div className='basic'>
+					<h2>Basic Properties:</h2>
+					<ul className='list'>
+						<li>
+							Body Type -{" "}
+							{data?.bodyType ? data?.bodyType : "Not defined"}
+						</li>
+						<li>
+							Axial Tilt -{" "}
+							{data?.axialTilt ? data?.axialTilt : "Not defined"}
+						</li>
+						<li>
+							Density -{" "}
+							{data?.density ? data?.density : "Not defined"}
+						</li>
+						<li>
+							Dimension -{" "}
+							{data?.dimension ? data?.dimension : "Not defined"}
+						</li>
+						<li>
+							Discovered By -{" "}
+							{data?.discoveredBy
+								? data?.discoveredBy
+								: "Not defined"}
+						</li>
+						<li>
+							Discovery Date -{" "}
+							{data?.discoveryDate
+								? data?.discoveryDate
+								: "Not defined"}
+						</li>
+						<li>
+							Equa Radius -{" "}
+							{data?.equaRadius
+								? data?.equaRadius
+								: "Not defined"}
+						</li>
+						<li>
+							Flattening -{" "}
+							{data?.flattening
+								? data?.flattening
+								: "Not defined"}
+						</li>
+						<li>
+							Gravity -{" "}
+							{data?.gravity ? data?.gravity : "Not defined"}
+						</li>
+						<li>
+							Inclination -{" "}
+							{data?.inclination
+								? data?.inclination
+								: "Not defined"}
+						</li>
+					</ul>
+				</div>
+				<div className='other'>
+					<h2>Other properties :</h2>
+					<ul className='list'>
+						<li>
+							Mass Exponent -{" "}
+							{data?.mass?.massExponent
+								? data?.mass?.massExponent
+								: "Not defined"}
+						</li>
+						<li>
+							Mass Value -{" "}
+							{data?.mass?.massValue
+								? data?.mass?.massValue
+								: "Not defined"}
+						</li>
+						<li>
+							Perihelion -{" "}
+							{data?.perihelion
+								? data?.perihelion
+								: "Not defined"}
+						</li>
+						<li>
+							Polar Radius -{" "}
+							{data?.polarRadius
+								? data?.polarRadius
+								: "Not defined"}
+						</li>
+						<li>
+							Mean Radius -{" "}
+							{data?.meanRadius
+								? data?.meanRadius
+								: "Not defined"}
+						</li>
+						<li>
+							Semi Major Axis -{" "}
+							{data?.semimajorAxis
+								? data?.semimajorAxis
+								: "Not defined"}
+						</li>
+						<li>
+							Sideral Orbit -{" "}
+							{data?.sideralOrbit
+								? data?.sideralOrbit
+								: "Not defined"}
+						</li>
+						<li>
+							Sideral Rotation -{" "}
+							{data?.sideralRotation
+								? data?.sideralRotation
+								: "Not defined"}
+						</li>
+						<li>
+							Volume Exponent -{" "}
+							{data?.vol?.volExponent
+								? data?.vol?.volExponent
+								: "Not defined"}
+						</li>
+						<li>
+							Volume Value -{" "}
+							{data?.vol?.volValue
+								? data?.vol?.volValue
+								: "Not defined"}
+						</li>
+					</ul>
+				</div>
+				{data?.isPlanet
+					? data?.moons?.length > 0 && (
+							<div className='moons'>
+								<h2 className='moon-title'>
+									{data?.moons?.length > 1 ? "Moons" : "Moon"}{" "}
+									:
+								</h2>
+								<ul className='moon-list'>
+									{data?.moons?.map((m, i) => (
+										<li className='moon' key={i + 1}>
+											{m?.moon}
+										</li>
+									))}
+								</ul>
+							</div>
+					  )
+					: ""}{" "}
+				<p className='close-icon' onClick={props.closeScreen}>
+					<IoCloseCircleOutline />
+				</p>
+			</div>
+		);
+	};
 
-  const Information = function () {
-    return (
-      <div className="information card">
-        <h1 className="name neon">{NAME}</h1>
-        <div className="basic">
-          <h2>Basic Properties:</h2>
-          <li className="list">
-            <ul>Body Type - {BODY_TYPE}</ul>
-            <ul>Axial Tilt - {AXIAL_TILT}</ul>
-            <ul>Density - {DENSITY}</ul>
-            <ul>Dimension - {DIMENSION}</ul>
-            <ul>Discovered By - {DISCOVERED_BY}</ul>
-            <ul>Discovery Date - {DISCOVERY_DATE}</ul>
-            <ul>Equa Radius - {EQUA_RADIUS}</ul>
-            <ul>Flattening - {FLATTENING}</ul>
-            <ul>Gravity - {GRAVITY}</ul>
-            <ul>Inclination - {INCLINATION}</ul>
-          </li>
-        </div>
-
-        <div className="other">
-          <h2>Other properties :</h2>
-          <li className="list">
-            <ul>Mass Exponent - {MASS_EXPONENT}</ul>
-            <ul>Mass Value - {MASS_VALUE}</ul>
-            <ul>Perihelion - {PERIHELIAN}</ul>
-            <ul>Polar Radius - {POLAR_RADIUS}</ul>
-            <ul>Mean Radius - {MEAN_RADIUS}</ul>
-            <ul>Semi Major Axis - {SEMI_MAJOR_AXIS}</ul>
-            <ul>Sideral Orbit - {SIDERAL_ORBIT}</ul>
-            <ul>Sideral Rotation - {SIDERAL_ROTATION}</ul>
-            <ul>Volume Exponent - {VOLUME_EXPONENT}</ul>
-            <ul>Volume Value - {VOLUME_VALUE}</ul>
-          </li>
-        </div>
-
-        <div className="moons">
-          <h2 className="moon-title">Moons :</h2>
-          <span className="moon">{MOONS}</span>
-        </div>
-
-        <p className="close-icon" onClick={props.closeScreen}>
-          <IoCloseCircleOutline />
-        </p>
-      </div>
-    );
-  };
-
-  return (
-    <div>{props.elems.status === false ? pageIntro() : Information()}</div>
-  );
+	return (
+		<div>{props.elems.status === false ? pageIntro() : Information()}</div>
+	);
 };
 
 export default Result;

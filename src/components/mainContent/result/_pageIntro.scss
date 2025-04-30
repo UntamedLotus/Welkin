@@ -1,47 +1,59 @@
 .page-intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 3rem;
-  padding: 10px;
+	display: grid;
+	grid-template-rows: auto 10%;
+	align-items: start;
+	justify-content: center;
+	padding: 1rem;
+	height: 100%;
 
-  h1 {
-    color: #4b6c68;
-    font-size: 4rem;
-    font-family: "Montserrat Subrayada";
-  }
+	h1 {
+		color: #336d65;
+		font-size: 4rem;
+		font-family: "Agestoned";
+		padding-bottom: 5rem;
+		padding-top: 5rem;
+	}
 
-  p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    width: 500px;
-    text-transform: uppercase;
-  }
+	p {
+		font-size: 1.2rem;
+		font-weight: bold;
+		width: 500px;
+		text-transform: uppercase;
+		font-family: "Orbitron";
+	}
 }
 
 .page-intro-text {
-  margin-top: 3rem;
-  color: #0f1615;
+	color: #0c1312;
+	line-height: 2.5rem;
 }
 
 .text {
-  margin-top: 18rem;
-  color: #a0dcd5;
+	color: #b1e1dc;
+	align-self: flex-end;
 }
 
 .underlined {
-  text-decoration: underline;
+	text-decoration: underline;
+}
+
+a {
+	color: #b1e1dc;
+}
+
+a:hover {
+	color: #76c9c1;
 }
 
 /************ MEDIA QURIES *************/
 @media (max-width: 44em) {
-  .page-intro-text {
-    color: #0c1d1a;
-  }
+	.page-intro-text {
+		color: #0c1d1a;
+	}
 }
 
 @media (max-width: 34em) {
-  .page-intro-text {
-    color: #a0dcd5;
-  }
+	.page-intro-text {
+		color: #a0dcd5;
+	}
 }
