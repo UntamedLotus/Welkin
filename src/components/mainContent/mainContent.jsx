@@ -15,9 +15,6 @@ const MainContent = () => {
 	});
 
 	// State to store temporary input values
-	const [status, setStatus] = useState(false);
-
-	const [result, setResult] = useState(null);
 
 	const [inputQuery, setInputQuery] = useState("");
 
@@ -58,6 +55,8 @@ const MainContent = () => {
 			...elems,
 			status: false,
 		});
+
+		setInputQuery("");
 	};
 
 	return (

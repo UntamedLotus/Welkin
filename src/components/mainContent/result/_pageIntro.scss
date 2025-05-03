@@ -1,59 +1,85 @@
 .page-intro {
-	display: grid;
-	grid-template-rows: auto 10%;
-	align-items: start;
-	justify-content: center;
-	padding: 1rem;
-	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 1rem;
+	min-height: 100%;
+	text-align: center;
 
-	h1 {
-		color: #336d65;
-		font-size: 4rem;
-		font-family: "Agestoned";
-		padding-bottom: 5rem;
-		padding-top: 5rem;
+	section {
+		max-width: 600px;
+		margin-bottom: 3rem;
 	}
 
-	p {
-		font-size: 1.2rem;
-		font-weight: bold;
-		width: 500px;
-		text-transform: uppercase;
-		font-family: "Orbitron";
+	h1 {
+		color: #2a5952;
+		font-size: 4rem;
+		font-family: "Agestoned";
+		margin-bottom: 2rem;
+		letter-spacing: 2px;
 	}
 }
 
 .page-intro-text {
+	font-size: 1.3rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-family: "Orbitron";
 	color: #0c1312;
-	line-height: 2.5rem;
+	line-height: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 .text {
+	font-size: 1.1rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-family: "Orbitron";
+	line-height: 2rem;
 	color: #b1e1dc;
-	align-self: flex-end;
-}
-
-.underlined {
-	text-decoration: underline;
+	font-size: 1.1rem;
 }
 
 a {
 	color: #b1e1dc;
-}
+	text-decoration: none;
+	transition: color 0.3s ease;
 
-a:hover {
-	color: #76c9c1;
-}
-
-/************ MEDIA QURIES *************/
-@media (max-width: 44em) {
-	.page-intro-text {
-		color: #0c1d1a;
+	&:hover {
+		color: #76c9c1;
+		text-decoration: underline;
 	}
 }
 
-@media (max-width: 34em) {
-	.page-intro-text {
-		color: #a0dcd5;
+/************ MEDIA QUERIES *************/
+@media (max-width: 768px) {
+	.page-intro {
+		padding: 1.5rem 1rem;
+
+		h1 {
+			font-size: 3rem;
+		}
+
+		p {
+			font-size: 1rem;
+			line-height: 1.8rem;
+			color: #9173c5;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.page-intro {
+		padding: 1rem;
+
+		h1 {
+			font-size: 2.4rem;
+		}
+
+		p {
+			font-size: 0.95rem;
+			line-height: 1.6rem;
+		}
 	}
 }
