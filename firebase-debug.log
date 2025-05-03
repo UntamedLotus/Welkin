@@ -1,0 +1,24 @@
+[debug] [2025-05-03T15:22:02.571Z] ----------------------------------------------------------------------
+[debug] [2025-05-03T15:22:02.580Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\neha2\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-05-03T15:22:02.581Z] CLI Version:   14.2.0
+[debug] [2025-05-03T15:22:02.581Z] Platform:      win32
+[debug] [2025-05-03T15:22:02.581Z] Node Version:  v20.17.0
+[debug] [2025-05-03T15:22:02.581Z] Time:          Sat May 03 2025 20:52:02 GMT+0530 (India Standard Time)
+[debug] [2025-05-03T15:22:02.581Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-03T15:22:02.588Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-05-03T15:22:02.845Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-03T15:22:02.845Z] > authorizing via signed-in user (ruttikajadhav@gmail.com)
+[debug] [2025-05-03T15:22:02.846Z] [iam] checking project welkin-r2 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-05-03T15:22:02.846Z] Checked if tokens are valid: false, expires at: 1745519173903
+[debug] [2025-05-03T15:22:02.847Z] Checked if tokens are valid: false, expires at: 1745519173903
+[debug] [2025-05-03T15:22:02.847Z] > refreshing access token with scopes: []
+[debug] [2025-05-03T15:22:02.848Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-05-03T15:22:02.848Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-05-03T15:22:03.214Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-05-03T15:22:03.214Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-05-03T15:22:03.226Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/welkin-r2:testIamPermissions [none]
+[debug] [2025-05-03T15:22:03.226Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/welkin-r2:testIamPermissions x-goog-quota-user=projects/welkin-r2
+[debug] [2025-05-03T15:22:03.226Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/welkin-r2:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-05-03T15:22:03.837Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-05-03T15:22:03.837Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
